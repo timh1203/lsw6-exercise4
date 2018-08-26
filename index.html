@@ -7,6 +7,14 @@
     .teal {
       background: teal;
     }
+
+    .basicButtonStyles {
+      height: 40px;
+      line-height: 20px;
+      width: 150px;
+      color: white;
+      font-size: 18px;
+    }
   </style>
 </head>
 
@@ -19,7 +27,7 @@
 <script crossorigin src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
 
 <script type='text/babel'>
-  const BasicButton = (props) => <button className={props.buttonStyles}>Click Me!</button>
+  const BasicButton = (props) => <button className={`basicButtonStyles ${props.buttonStyles}`}>Click Me!</button>
 
   BasicButton.defaultProps = {
     buttonStyles: 'teal',
