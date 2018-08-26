@@ -3,6 +3,11 @@
 
 <head>
   <title>Lambda School Week 6: Functional Component II Follow Along Exercise</title>
+  <style>
+    .teal {
+      background: teal;
+    }
+  </style>
 </head>
 
 <body>
@@ -14,11 +19,18 @@
 <script crossorigin src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
 
 <script type='text/babel'>
+  const BasicButton = (props) => <button className={props.buttonStyles}>Click Me!</button>
+
+  BasicButton.defaultProps = {
+    buttonStyles: 'teal',
+    
+  }
 
   const App = () => {
     return (
       <div>
         <h1>App</h1>
+        <BasicButton />
       </div>
     )
   }
