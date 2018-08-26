@@ -4,16 +4,26 @@
 <head>
   <title>Lambda School Week 6: Functional Component II Follow Along Exercise</title>
   <style>
-    .teal {
-      background: teal;
-    }
-
     .basicButtonStyles {
       height: 40px;
       line-height: 20px;
       width: 150px;
       color: white;
       font-size: 18px;
+    }
+    .teal {
+      background: teal;
+    }
+
+    .red {
+      background: red;
+    }
+
+    .blue {
+      background: blue;
+    }
+    .green {
+      background: green;
     }
   </style>
 </head>
@@ -27,18 +37,20 @@
 <script crossorigin src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
 
 <script type='text/babel'>
-  const BasicButton = (props) => <button className={`basicButtonStyles ${props.buttonStyles}`}>Click Me!</button>
+  const BasicButton = (props) => <button className={`basicButtonStyles ${props.buttonStyles}`}>{props.text}</button>
 
   BasicButton.defaultProps = {
     buttonStyles: 'teal',
-    
+    text: 'Click Me!'
   }
 
   const App = () => {
     return (
       <div>
         <h1>App</h1>
-        <BasicButton />
+        <BasicButton buttonStyles="red" />
+        <BasicButton buttonStyles="blue" text="Blue Button"/>
+        <BasicButton buttonStyles="green" text="Green Button"/>
       </div>
     )
   }
